@@ -1,14 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Share+Tech+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
 /* font-family: "Roboto Condensed", sans-serif;  */
 
 
 /* colors */
 :root { 
-    --main-dark-color: #798478;
+    --main-dark-color: #414833;
     --main-dark-grey: #403d39;
     --main-medium-grey: #ccc5b9;
-    --main-light-grey: #EAE0CC;
-    --main-orange: #4D6A6D;
+    --main-light-grey: #b3a999;
+    --main-orange: #307251;
     --main-orange-shade: #C9ADA1;
 }
 
@@ -24,17 +25,9 @@
 }
 
 body {
-    background-color: var(--main-dark-color);
+    min-height: 100vh;
+    background-color: var(--main-light-grey);
     color: var(--main-medium-grey);
-}
-
- {
-    padding: 2%;
-    background-color: var(--main-medium-grey);
-    color: #000000;
-    font-size: 1.6em;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
 }
 
 p, li, button {
@@ -43,9 +36,10 @@ p, li, button {
 /*header/navbar */
 
 nav {
-
     display: flex;
-    position: sticky;
+    position: fixed;
+    top: 0;
+    width: 100%;
     justify-content: space-around;
     align-items: center;
     min-height: 8vh;
@@ -125,9 +119,11 @@ nav {
     display: flex;
     justify-content: center;
     background-position: center;
+    background-attachment: fixed;
+}
+.home img {
     width: 100%;
     height: auto;
-    background-attachment: fixed;
 }
 
 .homeTexto {
@@ -154,8 +150,16 @@ nav {
     align-items: center;
 }
 
+/* main */
+h1 {
+    text-align: center;
+    margin-top: 2.5%;
+    color: #000;
+}
+
 .product img {
-    width: 80%;
+    width: 100%;
+    height: auto;
     display: block;
     margin: auto auto 100px auto;
 }
@@ -177,9 +181,9 @@ nav {
 .product button:visited {
     margin: 5% 0;
     width: 90%;
-    background-color: var(--main-orange);
+    background-color: var(--main-medium-grey);
     border-radius: 15px;
-    border: 2px solid var(--main-dark-grey);
+    border: 2px solid var(--main-dark-color);
     cursor: pointer;
     padding: 4% 15%;
     text-decoration: none;
@@ -188,28 +192,28 @@ nav {
 }
 
 .product button:hover {
-    background-color: var(--main-orange-shade);
+    background-color: var(--main-orange);
 }
 
 .product button a, 
 .product button a:visited {
     text-decoration: none;
-    color: var(--main-light-grey);
+    color: var(--main-dark-color);
 }
 
 .newsletter {
     text-align: center;
     padding: 5rem 1rem;
-    background: var(--black);
+    background: var(--main-light-grey);
 }
 
 .newsletter h3 {
-    color: var(--main-medium-grey);
+    color: var(--main-dark-color);
     font-size: 1.8em;
 }
 
 .newsletter p {
-    color: var(--main-medium-grey);
+    color: var(--main-dark-color);
     font-size: 1em;
     margin: 2em auto;
     width: 70em;
@@ -230,16 +234,15 @@ nav {
     font-size: 1.7rem;
     background: none;
     width: 100%;
-    color: #fff;
+    color: var(--main-orange-shade);
     text-transform: none;
     border: none;
 }
 
 .newsletter form input[type="email"]::placeholder {
-    color: #eee;
+    color: #fff;
     
 }
-
 
 .newsletter form input[type="submit"] {
     background: var(--main-orange);
@@ -251,14 +254,68 @@ nav {
 }
 
 .newsletter form input[type="submit"]:hover {
+    color: #000;
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    background-color: var(--main-orange);
+    height: 350px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    flex-direction: column;
+}
+
+footer .social-icon, footer .menu-footer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+footer .social-icon li, footer .menu-footer li{
+    list-style: none;
+}
+
+footer .social-icon li a {
+    font-size: 2em;
     color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
 }
 
-.credit {
+footer .social-icon li a:hover {
+    transform: translateY(-10px);
+}
+
+footer .menu-footer li a {
+    font-size: 2em;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+    text-decoration: none;
+    opacity: 0.75;
+}
+
+footer .menu-footer li a:hover {
+    opacity: 1;
+    transform: translateY(-10px);
+}
+
+footer p {
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
     font-size: 1.1em;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
 
 /* mediaqueries */
 
